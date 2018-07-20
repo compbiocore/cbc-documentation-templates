@@ -5,18 +5,6 @@ matrix: #allows to set up tests/deploys in different languages/environments.
       julia:
         - 0.6
 
-    - stage: test
-      language: r
-
-    - stage: test
-      language: c
-
-    - stage: test
-      language: python
-      python:
-        - 2.6
-        - 3.5
-
     - stage: deploy # this block builds and deploys the docs, it's in Python.
       language: python
       install:
