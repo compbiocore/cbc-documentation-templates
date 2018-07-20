@@ -7,3 +7,6 @@
 ### Overview
 
 This repository contains templates for documentation and other best-practices adopted by Brown's Computational Biology Core. Here you can find how to create and continuously deploy documentation to GitHub pages. In addition you can find templates for `.travis.yml`, `README.md`, `LICENSE`.
+
+### Copyright
+2018 - 2019 Computational Biology Core - Data Science Practice - Brown University
