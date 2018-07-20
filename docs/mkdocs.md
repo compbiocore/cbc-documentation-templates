@@ -46,9 +46,7 @@ docs_dir: docs/
 pages:
   - Home: 'index.md'
   - GitHub: 'readme.md'
-  - Documentation:
-    - Set up: 'mkdocs.md'
-    - Deploy: 'travis.md'
+  - Documentation: 'mkdocs.md'
 ```
 
 ## Deployment
@@ -71,18 +69,6 @@ matrix: #allows to set up tests/deploys in different languages/environments.
       language: julia
       julia:
         - 0.6
-
-    - stage: test
-      language: r
-
-    - stage: test
-      language: c
-
-    - stage: test
-      language: python
-      python:
-        - 2.6
-        - 3.5
 
     - stage: deploy # this block builds and deploys the docs, it's in Python.
       language: python
