@@ -39,3 +39,7 @@ Where LICENSE_STRING:
 `[![Conda](https://img.shields.io/conda/v/compbiocore/PACKAGE_NAME.svg?style=flat-square)](https://anaconda.org/compbiocore/PACAKGE_NAME)`
 
 > [![Conda](https://img.shields.io/conda/v/compbiocore/optitype.svg?style=flat-square)](https://anaconda.org/compbiocore/optitype)
+
+## Other
+For badges that are not listed here, refer to [Shields.io](https://shields.io/), make sure to use
+`style=flat-square` to be consistent with the other badges.
