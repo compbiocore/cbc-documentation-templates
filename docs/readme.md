@@ -138,7 +138,7 @@ Use the appropriate badges at the top of your README.md file, after the project 
 
 
 ###### Codecov
-`[![Coveralls](https://img.shields.io/codecov/c/github/compbiocore/REPOSITORY_NAME.svg?style=flat-square)](LINK)`
+`[![coverage](https://img.shields.io/codecov/c/github/compbiocore/REPOSITORY_NAME.svg?style=flat-square)](LINK)`
 > [![codecov.io](https://img.shields.io/codecov/c/github/bcbi/AUC.jl.svg?style=flat-square)]()
 
 #### Documentation
@@ -155,7 +155,7 @@ Use the appropriate badges at the top of your README.md file, after the project 
 
 Where LICENSE_STRING:  
 - MIT = `license-MIT`  
-- BSD 3-Clause: `License-BSD%203--Clause`
+- BSD 3-Clause = `License-BSD%203--Clause`
 
 > [![License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](https://raw.githubusercontent.com/compbiocore/cbc-documentation-templates/master/LICENSE.md)  
 > [![License](https://img.shields.io/badge/License-BSD%203--Clause-orange.svg?style=flat-square)](https://opensource.org/licenses/BSD-3-Clause)
