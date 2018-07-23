@@ -61,8 +61,6 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 ## Release History
 - 0.4
   - CHANGES:  
-    -  
-    -  
 
 - 0.3
   - CHANGES:

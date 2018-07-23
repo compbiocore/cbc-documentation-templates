@@ -21,8 +21,6 @@ Step by step with code on how to get up and running.
 > 2 .
 
 ## Authors
--
--
 
 
 ## Other workshops and tutorials
