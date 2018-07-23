@@ -1,37 +1,73 @@
-# Package name
+# Project Title
 
 
 [![Travis](https://img.shields.io/travis/compbiocore/cbc-documentation-templates.svg?style=flat-square)](https://travis-ci.org/compbiocore/cbc-documentation-templates)
-[![Coverage](https://img.shields.io/coveralls/github/jekyll/jekyll.svg?style=flat-square)](http://www.coverage.com) [![Docs](https://img.shields.io/badge/docs-stable-blue.svg?style=flat-square)](https://compbiocore.github.io/cbc-documentation-templates) [![License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](https://raw.githubusercontent.com/compbiocore/cbc-documentation-templates/master/LICENSE.md)
+[![Coverage](https://img.shields.io/coveralls/github/jekyll/jekyll.svg?style=flat-square)](http://www.coverage.com) [![Docs](https://img.shields.io/badge/docs-stable-blue.svg?style=flat-square)](https://compbiocore.github.io/cbc-documentation-templates)
+[![nbviewer](https://img.shields.io/badge/jupyter_notebooks-nbviewer-purple.svg?style=flat-square)](http://nbviewer.jupyter.org/github/compbiocore/.../master/docs/src/notebooks/)
+[![License](https://img.shields.io/badge/license-MIT-orange.svg?style=flat-square)](https://raw.githubusercontent.com/compbiocore/cbc-documentation-templates/master/LICENSE.md)  
+[![Conda](https://img.shields.io/conda/v/compbiocore/optitype.svg?style=flat-square)](https://anaconda.org/compbiocore/optitype)
 
 
-## Overview (required)
+## Overview
+One Paragraph of project description goes here
 
-General overview of package. Here you can write what the package does.
+## Getting Started
 
-## Requirements (optional)
-List of requirements if any. Use links.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-- [Package](https://package.com)
+### Prerequisites
 
-## Install Dependencies (optional)
-How to install dependencies if handled in the current project.  
+What things you need to install the software and how to install them
+Give a list with links and how to install using code snippets.
 
-## Other important information required by the current package (optional)
-Ex: API keys, Environment Variables
+```
+brew install ...
+npm install
+conda install ...
+```
 
-## Build / Install (required)
-How to build and install the package.
+### Installing
 
-### Running tests
-How to run tests.
+A step by step on how to install the package.
 
-## Local Development (optional)
-How to start a local development.
+Say what the step will be
 
-## Deployment (optional)
-How to deploy the package.
+```
+Give the example
+```
 
-## Contributing (required for open source projects)
+And repeat
 
-How someone can contribute to this repo.
+```
+until finished
+```
+
+End with an example of getting some data out of the system or using it for a little demo
+
+## Tests
+
+Explain how to run the automated tests for this system
+
+
+## Deployment
+
+Add additional notes about how to deploy this on a local machine and in a cloud provider.
+
+
+## Contributing
+
+Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Release History
+- 0.4
+  - CHANGES:  
+    -  
+    -  
+
+- 0.3
+  - CHANGES:
+
+
+## Authors
+
+List authors and affiliation.
