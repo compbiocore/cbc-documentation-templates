@@ -3,6 +3,8 @@
 Use these README templates when creating a GitHub repository.
 > You can find the README templates on GitHub or download them here.
 
+___
+
 ## README for Software
 [Raw template](https://raw.githubusercontent.com/compbiocore/cbc-documentation-templates/master/docs/README_template_software.md)
 
@@ -17,7 +19,7 @@ Use these README templates when creating a GitHub repository.
 
 
 ### Overview
-One Paragraph of project description goes here
+One paragraph project description goes here.
 
 ### Getting Started
 
@@ -78,6 +80,7 @@ Please read [CONTRIBUTING.md](link) for details on our code of conduct, and the 
 
 List authors and affiliation.
 
+___
 
 ## README for Workshops
 
@@ -116,6 +119,7 @@ Links to other workshops (Documentation and GitHub)
 - [Workshop 2](site)  
 - [Tutorial 1](site)
 
+___
 
 ## Badges
 

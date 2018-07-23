@@ -9,7 +9,7 @@
 
 
 ## Overview
-One Paragraph of project description goes here
+One paragraph project description goes here.
 
 ## Getting Started
 
