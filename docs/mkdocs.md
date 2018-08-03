@@ -31,31 +31,35 @@ site_name:        Brown's Computational Biology Core
 site_author:      Fernando Gelin
 repo_url:         https://github.com/compbiocore/cbc-documentation-templates
 site_description: Documentation templates and best-practices for Brown's Computational Biology Core.
-site_url:         https://compbiocore.github.io/cbc-documentation-templates/
+site_url: https://compbiocore.github.io/cbc-documentation-templates/
 
 theme:
   name: material
+
+extra_css:
+  - styles/dark_mode.css
 
 markdown_extensions:
   - extra
   - tables
   - fenced_code
-  - codehilite
   - admonition
+  - codehilite
   - footnotes
 
 docs_dir: docs/
 
 pages:
   - Home: 'index.md'
-  - GitHub: 'readme.md'
+  - Templates for GitHub: 'readme.md'
   - Documentation: 'mkdocs.md'
+
 ```
 
 !!! tip
     Go to [Markdows Extensions for Material](https://squidfunk.github.io/mkdocs-material/extensions/admonition/) to see detailed information on how to use some of the extensions
     listed in `markdown_extensions` above.
-    
+
 ## Deployment
 
 Documentation is deployed continuously with [Travis CI](https://travis-ci.org/), so you don't need to install MkDocs,
@@ -83,6 +87,8 @@ matrix: #allows to set up tests/deploys in different languages/environments.
         - pip install mkdocs
         - pip install mkdocs-material
       script:
+        - mkdir docs/styles
+        - curl https://gist.githubusercontent.com/fernandogelin/08ecff3387dffc374c4abf06a577ab71/raw/29ad95fcc771ce49ff6cecc56346218a0e929df8/dark_mode.css > docs/styles/dark_mode.css
         - mkdocs build --verbose --clean --strict
       deploy:
        provider: pages
@@ -91,6 +97,7 @@ matrix: #allows to set up tests/deploys in different languages/environments.
        local_dir: site
        on:
          branch: master
+
 ```
 
 Travis will show all stages separately:
