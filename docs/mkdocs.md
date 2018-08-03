@@ -3,7 +3,8 @@ generator. The user only needs to provide Markdown files and a `.yml` configurat
 to get started. The Material theme provides a modern, responsive, and intuitive interface to complex documentation.
 
 ## Installation
-> Note that you will need to do this only if you want to build your site locally to preview your docs. You won't be deploying it from your local machine. We use continuous deployment with Travis CI to build and deploy the documentation to GitHub Pages, see *Deployment* section.
+!!! note
+    Note that you will need to do this only if you want to build your site locally to preview your docs. You won't be deploying it from your local machine. We use continuous deployment with Travis CI to build and deploy the documentation to GitHub Pages, see *Deployment* section.
 
 To install MkDocs and MkDocs-Material:
 ```
@@ -40,6 +41,8 @@ markdown_extensions:
   - tables
   - fenced_code
   - codehilite
+  - admonition
+  - footnotes
 
 docs_dir: docs/
 
@@ -49,6 +52,10 @@ pages:
   - Documentation: 'mkdocs.md'
 ```
 
+!!! tip
+    Go to [Markdows Extensions for Material](https://squidfunk.github.io/mkdocs-material/extensions/admonition/) to see detailed information on how to use some of the extensions
+    listed in `markdown_extensions` above.
+    
 ## Deployment
 
 Documentation is deployed continuously with [Travis CI](https://travis-ci.org/), so you don't need to install MkDocs,

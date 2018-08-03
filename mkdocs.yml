@@ -7,11 +7,16 @@ site_url: https://compbiocore.github.io/cbc-documentation-templates/
 theme:
   name: material
 
+extra_css:
+  - assets/styles/dark_mode.css
+
 markdown_extensions:
   - extra
   - tables
   - fenced_code
+  - admonition
   - codehilite
+  - footnotes
 
 docs_dir: docs/
 
