@@ -8,7 +8,7 @@ theme:
   name: material
 
 extra_css:
-  - assets/styles/dark_mode.css
+  - docs/styles/dark_mode.css
 
 markdown_extensions:
   - extra

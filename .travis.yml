@@ -11,7 +11,8 @@ matrix: #allows to set up tests/deploys in different languages/environments.
         - pip install mkdocs
         - pip install mkdocs-material
       script:
-        - curl https://gist.githubusercontent.com/fernandogelin/08ecff3387dffc374c4abf06a577ab71/raw/29ad95fcc771ce49ff6cecc56346218a0e929df8/dark_mode.css > docs/assets/styles/dark_mode.css
+        - mkdir docs/styles
+        - curl https://gist.githubusercontent.com/fernandogelin/08ecff3387dffc374c4abf06a577ab71/raw/29ad95fcc771ce49ff6cecc56346218a0e929df8/dark_mode.css > styles/dark_mode.css
         - mkdocs build --verbose --clean --strict
       deploy:
        provider: pages
