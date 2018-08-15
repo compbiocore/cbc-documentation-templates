@@ -1,10 +1,5 @@
 matrix: #allows to set up tests/deploys in different languages/environments.
   include: #includes all stages of build
-    - stage: test # groups builds by type, add your tests here
-      language: julia
-      julia:
-        - 0.6
-
     - stage: deploy # this block builds and deploys the docs, it's in Python.
       language: python
       install:
