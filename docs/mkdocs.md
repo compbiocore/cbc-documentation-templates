@@ -118,8 +118,14 @@ it's deployed.
 To set up continuous deployment to the project's `gh-pages` branch, you first need to obtain a GitHub token from GitHub:
 ![Github token](assets/img/github_token.png)
 
-Then, on your project's Travis settings, set the environment variable GITHUB_TOKEN and <span style="color: red; font-weight: bold;">DO NOT</span> check the box to display value during build.
+Then, on your project's Travis settings, set the environment variable `GITHUB_TOKEN` and <span style="color: red; font-weight: bold;">DO NOT</span> check the box to display value during build.
+
+!!! attention
+    If you're using the R set up, use the key `GITHUB_PAT` instead of `GITHUB_TOKEN`.
+
 ![Travis settings](assets/img/travis_setting.png)
+
+
 
 Edit your `.travis.yml` file to use matrix, so we can separate the test and build stages as well as use multiple languages for each (MkDocs uses Python).  
 In the test stage, add all the tests you are normally running. In the deploy stage, add the the documentation build steps:
@@ -184,7 +190,7 @@ matrix:
       deploy:
        provider: pages
        skip_cleanup: true
-       github_token: $GITHUB_TOKEN
+       github_token: $GITHUB_PAT
        local_dir: site
        on:
          branch: master
