@@ -141,7 +141,7 @@ matrix: #allows to set up tests/deploys in different languages/environments.
       language: python
       install:
         - pip install mkdocs==1
-        - pip install mkdocs-material==3
+        - pip install mkdocs-material==3.0.3
       script:
         - mkdir docs/styles
         - mkdir docs/images
@@ -187,7 +187,9 @@ matrix:
         - mkdir docs
         - Rscript make.R
         - mkdir docs/styles
+        - mkdir docs/images
         - curl https://gist.githubusercontent.com/fernandogelin/08ecff3387dffc374c4abf06a577ab71/raw/29ad95fcc771ce49ff6cecc56346218a0e929df8/dark_mode.css > docs/styles/dark_mode.css
+        - curl https://gist.githubusercontent.com/fernandogelin/b02ee98f2f35ce4263093f7a1c66582b/raw/20ca5a37eb6defe00d35e50e7e00a784b64309f9/cbc-logo.svg > docs/images/cbc-logo.svg
         - mkdocs build --verbose --clean --strict
       deploy:
        provider: pages
