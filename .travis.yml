@@ -4,7 +4,7 @@ matrix: #allows to set up tests/deploys in different languages/environments.
       language: python
       install:
         - pip install mkdocs==1
-        - pip install mkdocs-material==3
+        - pip install mkdocs-material==3.0.3
       script:
         - mkdir docs/styles
         - mkdir docs/images
