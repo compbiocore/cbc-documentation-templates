@@ -38,7 +38,7 @@ theme:
   palette:
     primary: 'blue grey'
     accent: 'indigo'
-  logo: assets/img/cbc-logo.svg
+  logo: images/cbc-logo.svg
 
 extra_css:
   - styles/dark_mode.css
