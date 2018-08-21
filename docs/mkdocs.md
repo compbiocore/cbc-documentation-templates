@@ -27,7 +27,7 @@ images or with other formats should go in `docs/assests`. The document files sho
 The organization of the pages in the static site is set in the configuration file `mkdocs.yml`, this file also goes in the root of the project.
 
 ```yaml
-site_name:        Brown's Computational Biology Core
+site_name:        Computational Biology Core - Brown University
 site_author:      Fernando Gelin
 repo_url:         https://github.com/compbiocore/cbc-documentation-templates
 site_description: Documentation templates and best-practices for Brown's Computational Biology Core.
@@ -35,6 +35,10 @@ site_url: https://compbiocore.github.io/cbc-documentation-templates/
 
 theme:
   name: material
+  palette:
+    primary: 'blue grey'
+    accent: 'indigo'
+  logo: assets/img/cbc-logo.svg
 
 extra_css:
   - styles/dark_mode.css
@@ -47,14 +51,10 @@ markdown_extensions:
   - codehilite
   - footnotes
 
-docs_dir: docs
-
-pages:
+nav:
   - Home: 'index.md'
   - Templates for GitHub: 'readme.md'
   - Documentation: 'mkdocs.md'
-  - Viggnetes: 'vignettes-package.md' # don't use .Rmd here
-
 ```
 
 !!! tip
@@ -140,8 +140,8 @@ matrix: #allows to set up tests/deploys in different languages/environments.
     - stage: deploy # this block builds and deploys the docs, it's in Python.
       language: python
       install:
-        - pip install mkdocs==0.17.5
-        - pip install mkdocs-material==2.9.4
+        - pip install mkdocs==1
+        - pip install mkdocs-material==3
       script:
         - mkdir docs/styles
         - curl https://gist.githubusercontent.com/fernandogelin/08ecff3387dffc374c4abf06a577ab71/raw/29ad95fcc771ce49ff6cecc56346218a0e929df8/dark_mode.css > docs/styles/dark_mode.css

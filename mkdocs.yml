@@ -1,4 +1,4 @@
-site_name:        Brown's Computational Biology Core
+site_name:        Computational Biology Core - Brown University
 site_author:      Fernando Gelin
 repo_url:         https://github.com/compbiocore/cbc-documentation-templates
 site_description: Documentation templates and best-practices for Brown's Computational Biology Core.
@@ -6,6 +6,10 @@ site_url: https://compbiocore.github.io/cbc-documentation-templates/
 
 theme:
   name: material
+  palette:
+    primary: 'blue grey'
+    accent: 'indigo'
+  logo: images/cbc-logo.svg
 
 extra_css:
   - styles/dark_mode.css
@@ -18,7 +22,7 @@ markdown_extensions:
   - codehilite
   - footnotes
 
-pages:
+nav:
   - Home: 'index.md'
   - Templates for GitHub: 'readme.md'
   - Documentation: 'mkdocs.md'
