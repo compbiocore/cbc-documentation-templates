@@ -176,7 +176,7 @@ matrix:
         - conda info -a
         - conda create -q -n test-env python=$TRAVIS_PYTHON_VERSION
         - source activate test-env
-        - pip install mkdocs==0.17.5 mkdocs-material==2.9.4
+        - pip install mkdocs==1 mkdocs-material==3.0.3
         - conda install r-knitr r-devtools
         - R -e 'remove.packages(c("curl","httr")); install.packages(c("curl", "httr"), repos="http://cran.us.r-project.org"); Sys.setenv(CURL_CA_BUNDLE="/utils/microsoft-r-open-3.5.0/lib64/R/lib/microsoft-r-cacert.pem")'
         - R -e 'install.packages("Rd2md", repos="http://cran.us.r-project.org")'

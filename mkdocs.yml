@@ -6,6 +6,8 @@ site_url: https://compbiocore.github.io/
 
 theme:
   name: material
+  feature:
+    tabs: true
   palette:
     primary: 'blue grey'
     accent: 'indigo'
@@ -24,5 +26,6 @@ markdown_extensions:
 
 nav:
   - Home: 'index.md'
-  - Templates for GitHub: 'readme.md'
-  - Documentation: 'mkdocs.md'
+  - Docs:
+    - Templates for GitHub: 'readme.md'
+    - Documentation: 'mkdocs.md'
