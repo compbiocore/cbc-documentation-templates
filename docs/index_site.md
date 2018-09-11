@@ -14,7 +14,7 @@ type:             software    # required. choose one of [software, tutorial, wor
 
 ```
 
-Example of card generated from the
+Example of card generated from the `yaml` above:
 
 ![Project card](assets/img/project_card.png)
 
