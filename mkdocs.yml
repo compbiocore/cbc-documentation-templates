@@ -29,3 +29,5 @@ nav:
   - Docs:
     - Templates for GitHub: 'readme.md'
     - Documentation: 'mkdocs.md'
+  - Index site:
+    - Set up for CD: 'index_site.md'

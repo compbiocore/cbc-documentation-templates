@@ -91,8 +91,8 @@ out_ = file.path("docs", gsub(".Rmd", ".md", vignette_file))
 knit(in_, out_)
 
 
-file_rename <- function(from, to) {
-    todir <- dirname(to)
+file_rename = function(from, to) {
+    todir = dirname(to)
     if (!isTRUE(file.info(todir)$isdir)) dir.create(todir, recursive=TRUE)
     file.rename(from = from,  to = to)
 }
