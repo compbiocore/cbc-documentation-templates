@@ -8,7 +8,7 @@ site_name:        Bioflows
 site_author:      Asshok Ragavendran
 repo_url:         https://github.com/compbiocore/bioflows # not required if repo is part of compbiocore organization.
 site_description: Short description of project, workshop, tutorial, or document.
-site_url:         https://compbiocore.github.io/
+docs_url:         https://compbiocore.github.io/bioflows
 doi: "10.1007/978-3-319-76207-4_15" # if the project has a related publication.
 type:             software    # required. choose one of [software, tutorial, workshop, documentation]
 
