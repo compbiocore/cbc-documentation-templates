@@ -204,4 +204,4 @@ Travis will show all stages separately:
 ![Travis pass](assets/img/travis_pass.png)
 
 Done!   
-Your documentation site will be available at `https://compbiocore.github.io/projec-name/`.
+Your documentation site will be available at `https://compbiocore.github.io/project-name/`.
