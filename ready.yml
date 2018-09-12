@@ -1,7 +1,7 @@
 repo: cbc-documentation-templates
-site_name:        Brown's Computational Biology Core
+site_name:        CBS's Documentation and Best Practices
 site_author:      Fernando Gelin
 repo_url:         https://github.com/compbiocore/cbc-documentation-templates
 site_description: Documentation templates and best-practices for Brown's Computational Biology Core.
-site_url: https://compbiocore.github.io/cbc-documentation-templates/
+docs_url: https://compbiocore.github.io/cbc-documentation-templates/
 type: documentation
