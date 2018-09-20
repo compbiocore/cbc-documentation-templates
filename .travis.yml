@@ -8,8 +8,8 @@ matrix: #allows to set up tests/deploys in different languages/environments.
       script:
         - mkdir docs/styles
         - mkdir docs/images
-        - curl https://raw.githubusercontent.com/compbiocore/cbc-documentation-templates/master/docs/assets/styles/dark_mode.css > docs/styles/dark_mode.css
-        - curl https://raw.githubusercontent.com/compbiocore/cbc-documentation-templates/master/docs/assets/img/cbc-logo.svg > docs/images/cbc-logo.svg
+        - curl -H 'Authorization: token $GITHUB_TOKEN' -H 'Accept: application/vnd.github.v3.raw' -o docs/styles/dark_mode.css -L https://api.github.com/repos/compbiocore/cbc-documentation-templates/contents/docs/assets/styles/dark_mode.css
+        - curl -H 'Authorization: token $GITHUB_TOKEN' -H 'Accept: application/vnd.github.v3.raw' -o docs/images/cbc-logo.svg -L https://api.github.com/repos/compbiocore/cbc-documentation-templates/contents/docs/assets/img/cbc-logo.svg
         - mkdocs build --verbose --clean --strict
       deploy:
        provider: pages
