@@ -86,8 +86,9 @@ for(file in files){
 }
 
 vignette_file = dir("vignettes/")
-in_ = file.path("vignettes", vignette_file)
-out_ = file.path("docs", gsub(".Rmd", ".md", vignette_file))
+Rmds = vignette_file[grep(".Rmd",vignette_file)]
+in_ = file.path("vignettes", Rmds)
+out_ = file.path("docs", gsub(".Rmd", ".md", Rmds))
 knit(in_, out_)
 
 
