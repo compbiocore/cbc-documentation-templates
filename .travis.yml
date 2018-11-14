@@ -2,14 +2,19 @@ matrix: #allows to set up tests/deploys in different languages/environments.
   include: #includes all stages of build
     - stage: deploy # this block builds and deploys the docs, it's in Python.
       language: python
+      sudo: required
+      dist: trusty
       install:
+        - apt-get install jq
         - pip install mkdocs==1
         - pip install mkdocs-material==3.0.3
       script:
         - mkdir docs/styles
         - mkdir docs/images
-        - curl https://gist.githubusercontent.com/fernandogelin/08ecff3387dffc374c4abf06a577ab71/raw/083a383e51533feb20f3b03e6edcd9e86ddc59f9/dark_mode.css > docs/styles/dark_mode.css
-        - curl https://gist.githubusercontent.com/fernandogelin/b02ee98f2f35ce4263093f7a1c66582b/raw/20ca5a37eb6defe00d35e50e7e00a784b64309f9/cbc-logo.svg > docs/images/cbc-logo.svg
+        - curl https://api.github.com/repos/compbiocore/cbc-documentation-templates/contents/files/dark_mode.css\?access_token\=$GITHUB_TOKEN > dark_mode.json
+        - jq -r '.content' < dark_mode.json | base64 --decode > docs/styles/dark_mode.css
+        - curl https://api.github.com/repos/compbiocore/cbc-documentation-templates/contents/files/cbc-logo.svg\?access_token\=$GITHUB_TOKEN > logo.json
+        - jq -r '.content' < logo.json | base64 --decode > docs/images/cbc-logo.svg
         - mkdocs build --verbose --clean --strict
       deploy:
        provider: pages
