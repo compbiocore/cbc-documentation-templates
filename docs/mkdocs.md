@@ -24,7 +24,10 @@ Navigate to `http://127.0.0.1:8000/` to preview your docs.
 The documentation should go in the `docs/` folder in the root of your GitHub project. Assets like
 images or with other formats should go in `docs/assests`. The document files should be Markdown.
 
-The organization of the pages in the static site is set in the configuration file `mkdocs.yml`, this file also goes in the root of the project.
+The organization of the pages in the static site is set in the configuration file `mkdocs.yml`, this file also goes in the root of the project.  
+
+!!! note
+    Note that all CBC projects should have the `site_url` option set to `https://compbiocore.github.io/`. This will set the link on the logo to the main porjects site instead.
 
 ```yaml
 site_name:        Computational Biology Core - Brown University
@@ -128,35 +131,33 @@ Then, on your project's Travis settings, set the environment variable `GITHUB_TO
 
 
 
-Edit your `.travis.yml` file to use matrix, so we can separate the test and build stages as well as use multiple languages for each (MkDocs uses Python).  
-In the test stage, add all the tests you are normally running. In the deploy stage, add the the documentation build steps:
+Edit your `.travis.yml` file to use matrix, so we can separate the test and build stages. The test stage is what you would normally run. Tests set up can vary, see [Travis CI docs](https://docs.travis-ci.com) for more information. For the deploy stage, use the set up outlined below. Here we use MkDocs to build the documentation and deploy to GitHub Pages. Note that all the CBC docs should have the CBC logo and a custom style for code blocks. The first six lines in the script section uses the GitHub API to retrieve the css and svg so MkDocs can render the documentation site correctly.
 ```yaml
 matrix: #allows to set up tests/deploys in different languages/environments.
   include: #includes all stages of build
-    - stage: test # groups builds by type, add your tests here
-      language: julia
-      julia:
-        - 0.6
-
     - stage: deploy # this block builds and deploys the docs, it's in Python.
       language: python
+      sudo: required
+      dist: trusty
       install:
+        - sudo apt-get install jq
         - pip install mkdocs==1
         - pip install mkdocs-material==3.0.3
       script:
         - mkdir docs/styles
         - mkdir docs/images
-        - curl https://raw.githubusercontent.com/compbiocore/cbc-documentation-templates/master/docs/assets/styles/dark_mode.css > docs/styles/dark_mode.css
-        - curl https://raw.githubusercontent.com/compbiocore/cbc-documentation-templates/master/docs/assets/img/cbc-logo.svg > docs/images/cbc-logo.svg
+        - curl https://api.github.com/repos/compbiocore/cbc-documentation-templates/contents/files/dark_mode.css\?access_token\=$GITHUB_TOKEN > dark_mode.json
+        - jq -r '.content' < dark_mode.json | base64 --decode > docs/styles/dark_mode.css
+        - curl https://api.github.com/repos/compbiocore/cbc-documentation-templates/contents/files/cbc-logo.svg\?access_token\=$GITHUB_TOKEN > logo.json
+        - jq -r '.content' < logo.json | base64 --decode > docs/images/cbc-logo.svg
         - mkdocs build --verbose --clean --strict
       deploy:
-       provider: pages
-       skip_cleanup: true
-       github_token: $GITHUB_TOKEN
-       local_dir: site
-       on:
-         branch: master
-
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: site
+        on:
+          branch: master
 ```
 
 !!! warning
@@ -167,7 +168,10 @@ matrix:
   include: #allows to set up tests/deploys in different languages/environments.
     - stage: deploy # this block builds and deploys the docs, it's in Python.
       language: python
+      sudo: required
+      dist: trusty
       install:
+        - sudo apt-get install jq
         - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
         - bash miniconda.sh -b -p $HOME/miniconda
         - export PATH="$HOME/miniconda/bin:$PATH"
@@ -189,8 +193,10 @@ matrix:
         - Rscript make.R
         - mkdir docs/styles
         - mkdir docs/images
-        - curl https://raw.githubusercontent.com/compbiocore/cbc-documentation-templates/master/docs/assets/styles/dark_mode.css > docs/styles/dark_mode.css
-        - curl https://raw.githubusercontent.com/compbiocore/cbc-documentation-templates/master/docs/assets/img/cbc-logo.svg > docs/images/cbc-logo.svg
+        - curl https://api.github.com/repos/compbiocore/cbc-documentation-templates/contents/files/dark_mode.css\?access_token\=$GITHUB_PAT > dark_mode.json
+        - jq -r '.content' < dark_mode.json | base64 --decode > docs/styles/dark_mode.css
+        - curl https://api.github.com/repos/compbiocore/cbc-documentation-templates/contents/files/cbc-logo.svg\?access_token\=$GITHUB_PAT > logo.json
+        - jq -r '.content' < logo.json | base64 --decode > docs/images/cbc-logo.svg
         - mkdocs build --verbose --clean --strict
       deploy:
        provider: pages

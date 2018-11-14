@@ -17,9 +17,9 @@ matrix: #allows to set up tests/deploys in different languages/environments.
         - jq -r '.content' < logo.json | base64 --decode > docs/images/cbc-logo.svg
         - mkdocs build --verbose --clean --strict
       deploy:
-       provider: pages
-       skip_cleanup: true
-       github_token: $GITHUB_TOKEN
-       local_dir: site
-       on:
-         branch: master
+        provider: pages
+        skip_cleanup: true
+        github_token: $GITHUB_TOKEN
+        local_dir: site
+        on:
+          branch: master
