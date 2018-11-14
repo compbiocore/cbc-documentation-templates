@@ -5,7 +5,7 @@ matrix: #allows to set up tests/deploys in different languages/environments.
       sudo: required
       dist: trusty
       install:
-        - apt-get install jq
+        - sudo apt-get install jq
         - pip install mkdocs==1
         - pip install mkdocs-material==3.0.3
       script:
