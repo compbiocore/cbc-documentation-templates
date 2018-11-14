@@ -10,5 +10,5 @@ Here you will find templates and examples of how to produce and deploy documenta
 
 <div style="display:flex;justify-content:space-around;margin-top:10rem">
 <img src="assets/img/cbc.svg" height=200></img>
-<img src="assets/img/brown.svg" height=200></img>
+<img src="assets/img/brown-logo.svg" height=200></img>
 </div>
