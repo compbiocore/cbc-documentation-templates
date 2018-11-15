@@ -27,6 +27,6 @@ markdown_extensions:
 nav:
   - Home: 'index.md'
   - Documentation:
-      - MkDocs and Travis: 'mkdocs.md'
-      - Set up for CD: 'index_site.md'
-      - Templates: 'readme.md'
+    - Initial set-up: 'mkdocs.md'
+    - Continuous deployment: 'index_site.md'
+    - Templates: 'readme.md'

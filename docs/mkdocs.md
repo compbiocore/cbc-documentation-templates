@@ -1,6 +1,6 @@
-We use [MkDocs](https://www.mkdocs.org/) with [Material design](https://squidfunk.github.io/mkdocs-material/). MkDocs is a powerful static site
-generator. The user only needs to provide Markdown files and a `.yml` configuration file
-to get started. The Material theme provides a modern, responsive, and intuitive interface to complex documentation.
+We use [MkDocs](https://www.mkdocs.org/) with [Material design](https://squidfunk.github.io/mkdocs-material/) for documentation. MkDocs is a powerful static site
+generator. The user provides Markdown files and a `.yml` configuration file
+to get started. The Material theme has a modern, responsive, and intuitive interface to complex documentation.
 
 ## Installation
 !!! note
@@ -8,7 +8,7 @@ to get started. The Material theme provides a modern, responsive, and intuitive 
 
 To install MkDocs and MkDocs-Material:
 ```
-pip install mkdocs mkdocs-material
+pip install mkdocs==1 mkdocs-material==3.0.3
 ```
 
 Create your document files and `mkdocs.yml` configuration file (see below), and:

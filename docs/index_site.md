@@ -21,5 +21,3 @@ pypi: true # if project is on pypi
 Example of card generated from the `yaml` above:
 
 ![Project card](assets/img/project_card.png)
-
-That's it. Travis will run the script that gather that information from Github and update the index site.
