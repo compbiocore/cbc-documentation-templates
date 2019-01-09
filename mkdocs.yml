@@ -27,6 +27,7 @@ markdown_extensions:
 nav:
   - Home: 'index.md'
   - Documentation:
-    - Initial set-up: 'mkdocs.md'
-    - Continuous deployment: 'index_site.md'
+    - Initial Set Up: 'mkdocs.md'
+    - Continuous Deployment: 'index_site.md'
     - Templates: 'readme.md'
+  - Semantic Release: 'semantic_release.md'
