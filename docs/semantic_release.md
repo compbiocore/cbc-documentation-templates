@@ -1,8 +1,8 @@
 ## Introduction
 
-**semantic-release** is used to automate the package release workflow, determining the next version number, generating the release notes and publishing the package.
+**semantic-release** is used to automate the package release workflow. It determines the next version number, generates the release notes and publishes the package.
 
-**semantic-release** uses the commit messages to determine the type of changes in the codebase. Following formalized conventions for commit messages, semantic-release automatically determines the next semantic version (major.minor.patch) number, creates a tag and a release on GitHub, generates a changelog and publishes the release.
+**semantic-release** uses the commit messages to determine the type of changes in the codebase. Following formalized conventions for commit messages, semantic-release automatically determines the next semantic version number (major.minor.patch), creates a tag and a release on GitHub, generates a changelog, and publishes the release.
 
 ## Conventional Commit Messages
 The commit messages need to be standard, we use the [Angular Commit Message Conventions][acmc]. To enforce these rules, we use the package [commitizen][cmtz].
@@ -44,7 +44,7 @@ This will allow semantic-release to find the version number for the project, and
 !!! Note
     This is language and project specific. So make sure you change that to reflect your project.
 
-For julia projects:
+For julia projects, create a `setup.cfg` file:
 ```toml
 [semantic-release]
 version_variable=Project.toml:version
@@ -52,7 +52,11 @@ version_variable=Project.toml:version
 
 ### Travis CI
 
-**semantic-release** works best when integrated with a CI service. To set up your package for semantic-release, add a environment variable to Travis' settings with a Github token called `GH_TOKEN`, and add the following block to your `.travis.yml`:
+**semantic-release** works best when integrated with a CI service. To set up your package for semantic-release, add an environment variable to Travis' settings with a Github token called `GH_TOKEN`, and add the following block to your `.travis.yml`:
+
+!!! Important
+    For Python packages that are published on pypi.org, add the variables `PYPI_USERNAME` and `PYPI_PASSWORD` to the Travis environment.
+    In addition, the README should be in `.rst` instead of `.md`, or it won't show up correctly on pypi.org.
 
 If using the matrix set up:  
 !!! Note
