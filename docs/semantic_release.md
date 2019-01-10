@@ -74,19 +74,19 @@ matrix:
       script:
         - git config --global user.name "semantic-release (via TravisCI)"
         - git config --global user.email "semantic-release@travis"
-        - semantic-release --patch publish
+        - semantic-release publish
 ```
 Or, if the package is in Python, add an `after_success`.  
 
 !!! Attention
-    If your package does not support Python 3.6, the previous set up is preferred.
+    If your package does not support Python 3.6, the previous should be used so the test stage and the semantic release stage can be set with different Python versions.
 ```yaml
 after_success:
   - git config --global user.name "semantic-release (via TravisCI)"
   - git config --global user.email "semantic-release@travis"
   - pip install typing
   - pip install python-semantic-release
-  - semantic-release --patch publish
+  - semantic-release publish
 ```
 
 [acmc]:https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines
