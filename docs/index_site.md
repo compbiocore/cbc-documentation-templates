@@ -11,7 +11,7 @@ authors:
   - name: Fernando Gelin
     github_user: fernandogelin
 repo_url:         https://github.com/compbiocore/bioflows # not required if repo is part of compbiocore organization.
-site_description: Short description of project, workshop, tutorial, or document.
+site_description: "Short description of project, workshop, tutorial, or document." # make sure the description is within quotes, specially if there are special characters on it.
 docs_url:         https://compbiocore.github.io/bioflows
 doi: "10.1007/978-3-319-76207-4_15" # if the project has a related publication.
 type: software    # required. choose one of [software, tutorial, workshop, documentation]
