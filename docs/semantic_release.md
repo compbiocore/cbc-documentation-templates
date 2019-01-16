@@ -46,7 +46,7 @@ This will allow semantic-release to find the version number for the project, and
 
 For julia projects, create a `setup.cfg` file:
 ```toml
-[semantic-release]
+[semantic_release]
 version_variable=Project.toml:version
 ```
 
