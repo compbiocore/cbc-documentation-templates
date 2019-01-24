@@ -1,0 +1,708 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content="Documentation templates and best-practices for Brown's Computational Biology Core.">
+      
+      
+        <link rel="canonical" href="https://compbiocore.github.io/mkdocs/">
+      
+      
+        <meta name="author" content="Fernando Gelin">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0, mkdocs-material-3.0.3">
+    
+    
+      
+        <title>Documentation Set Up - Software Development Best Practices</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.451f80e5.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.22915126.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#546e7a">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.1aa3b519.js"></script>
+    
+    
+      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+      <link rel="stylesheet" href="../styles/dark_mode.css">
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448"
+    viewBox="0 0 416 448" id="__github">
+  <path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19-18.125
+        8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19 18.125-8.5
+        18.125 8.5 10.75 19 3.125 20.5zM320 304q0 10-3.125 20.5t-10.75
+        19-18.125 8.5-18.125-8.5-10.75-19-3.125-20.5 3.125-20.5 10.75-19
+        18.125-8.5 18.125 8.5 10.75 19 3.125 20.5zM360
+        304q0-30-17.25-51t-46.75-21q-10.25 0-48.75 5.25-17.75 2.75-39.25
+        2.75t-39.25-2.75q-38-5.25-48.75-5.25-29.5 0-46.75 21t-17.25 51q0 22 8
+        38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0
+        37.25-1.75t35-7.375 30.5-15 20.25-25.75 8-38.375zM416 260q0 51.75-15.25
+        82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5-41.75
+        1.125q-19.5 0-35.5-0.75t-36.875-3.125-38.125-7.5-34.25-12.875-30.25-20.25-21.5-28.75q-15.5-30.75-15.5-82.75
+        0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25
+        30.875q36.75-8.75 77.25-8.75 37 0 70 8 26.25-20.5
+        46.75-30.25t47.25-9.75q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34
+        99.5z" />
+</svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="../#documentation-structure" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://compbiocore.github.io/" title="Software Development Best Practices" class="md-header-nav__button md-logo">
+          
+            <img src="../images/cbc-logo.svg" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            
+              <span class="md-header-nav__topic">
+                Software Development Best Practices
+              </span>
+              <span class="md-header-nav__topic">
+                Documentation Set Up
+              </span>
+            
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          
+            <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+            
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+          
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+
+  <a href="https://github.com/compbiocore/cbc-documentation-templates/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://compbiocore.github.io/" title="Software Development Best Practices" class="md-nav__button md-logo">
+      
+        <img src="../images/cbc-logo.svg" width="48" height="48">
+      
+    </a>
+    Software Development Best Practices
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/compbiocore/cbc-documentation-templates/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#__github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Documentation Set Up
+      </label>
+    
+    <a href="./" title="Documentation Set Up" class="md-nav__link md-nav__link--active">
+      Documentation Set Up
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-structure" title="Documentation Structure" class="md-nav__link">
+    Documentation Structure
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation-structure-for-r-packages" title="Documentation Structure for R packages" class="md-nav__link">
+    Documentation Structure for R packages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" title="Deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../index_site/" title="Continuous Deployment" class="md-nav__link">
+      Continuous Deployment
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../readme/" title="Templates" class="md-nav__link">
+      Templates
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../semantic_release/" title="Semantic Release" class="md-nav__link">
+      Semantic Release
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-structure" title="Documentation Structure" class="md-nav__link">
+    Documentation Structure
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation-structure-for-r-packages" title="Documentation Structure for R packages" class="md-nav__link">
+    Documentation Structure for R packages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" title="Deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/compbiocore/cbc-documentation-templates/edit/master/docs/mkdocs.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                  <h1>Documentation Set Up</h1>
+                
+                <p>We use <a href="https://www.mkdocs.org/">MkDocs</a> with <a href="https://squidfunk.github.io/mkdocs-material/">Material design</a> for documentation. MkDocs is a powerful static site
+generator. The user provides Markdown files and a <code>.yml</code> configuration file
+to get started. The Material theme has a modern, responsive, and intuitive interface to complex documentation.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that you will need to do this only if you want to build your site locally to preview your docs. You won't be deploying it from your local machine. We use continuous deployment with Travis CI to build and deploy the documentation to GitHub Pages, see <em>Deployment</em> section.</p>
+</div>
+<p>To install MkDocs and MkDocs-Material:</p>
+<div class="codehilite"><pre><span></span>pip install mkdocs==1 mkdocs-material==3.0.3
+</pre></div>
+
+
+<p>Create your document files and <code>mkdocs.yml</code> configuration file (see below), and:</p>
+<div class="codehilite"><pre><span></span>mkdocs build
+mkdocs serve
+</pre></div>
+
+
+<p>Navigate to <code>http://127.0.0.1:8000/</code> to preview your docs.</p>
+<h2 id="documentation-structure">Documentation Structure</h2>
+<p>The documentation should go in the <code>docs/</code> folder in the root of your GitHub project. Assets like
+images or with other formats should go in <code>docs/assests</code>. The document files should be Markdown.</p>
+<p>The organization of the pages in the static site is set in the configuration file <code>mkdocs.yml</code>, this file also goes in the root of the project.  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Note that all CBC projects should have the <code>site_url</code> option set to <code>https://compbiocore.github.io/</code>. This will set the link on the logo to the main porjects site instead.</p>
+</div>
+<div class="codehilite"><pre><span></span><span class="nt">site_name</span><span class="p">:</span>        <span class="l l-Scalar l-Scalar-Plain">Computational Biology Core - Brown University</span>
+<span class="nt">site_author</span><span class="p">:</span>      <span class="l l-Scalar l-Scalar-Plain">Fernando Gelin</span>
+<span class="nt">repo_url</span><span class="p">:</span>         <span class="l l-Scalar l-Scalar-Plain">https://github.com/compbiocore/cbc-documentation-templates</span>
+<span class="nt">site_description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Documentation templates and best-practices for Brown&#39;s Computational Biology Core.</span>
+<span class="nt">site_url</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://compbiocore.github.io/</span> <span class="c1">#this is the main site!</span>
+
+<span class="nt">theme</span><span class="p">:</span>
+  <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">material</span>
+  <span class="nt">palette</span><span class="p">:</span>
+    <span class="nt">primary</span><span class="p">:</span> <span class="s">&#39;blue</span><span class="nv"> </span><span class="s">grey&#39;</span>
+    <span class="nt">accent</span><span class="p">:</span> <span class="s">&#39;indigo&#39;</span>
+  <span class="nt">logo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">images/cbc-logo.svg</span>
+
+<span class="nt">extra_css</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">styles/dark_mode.css</span>
+
+<span class="nt">markdown_extensions</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">extra</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">tables</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">fenced_code</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">admonition</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">codehilite</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">footnotes</span>
+
+<span class="nt">nav</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Home</span><span class="p">:</span> <span class="s">&#39;index.md&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Templates for GitHub</span><span class="p">:</span> <span class="s">&#39;readme.md&#39;</span>
+  <span class="p p-Indicator">-</span> <span class="nt">Documentation</span><span class="p">:</span> <span class="s">&#39;mkdocs.md&#39;</span>
+</pre></div>
+
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Go to <a href="https://squidfunk.github.io/mkdocs-material/extensions/admonition/">Markdows Extensions for Material</a> to see detailed information on how to use some of the extensions
+listed in <code>markdown_extensions</code> above.</p>
+</div>
+<h3 id="documentation-structure-for-r-packages">Documentation Structure for R packages</h3>
+<p>For R packages that use <code>roxygen2</code> to generate documentation in <code>man/*.Rd</code> the set up is a little different. You will still need a <code>mkdocs.yml</code> file in your root directory as shown above, but in the pages section of the <code>mkdocs.yml</code> use the file names from your <code>man/</code> and <code>vignettes/</code> directories, but change the extension to <code>.md</code>.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>The line <code>- Home: 'index.md'</code> is required for R packages. That page will include the contents of the README.md associated with the package.</p>
+</div>
+<p>Also in your root directory create a file called <code>make.R</code> that contains:  </p>
+<div class="codehilite"><pre><span></span><span class="c1"># Script to convert .Rd and .Rmd files from man/ and vignettes to docs/*.md for use by MkDocs</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;Rd2md&quot;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="s">&quot;knitr&quot;</span><span class="p">)</span>
+
+<span class="n">path</span> <span class="o">=</span> <span class="s">&quot;man/&quot;</span>
+<span class="n">files</span> <span class="o">=</span> <span class="nf">dir</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+
+<span class="nf">for</span><span class="p">(</span><span class="n">file</span> <span class="n">in</span> <span class="n">files</span><span class="p">){</span>
+  <span class="n">infile</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">file</span><span class="p">)</span>
+  <span class="n">outfile</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="s">&quot;docs&quot;</span><span class="p">,</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&quot;.Rd&quot;</span><span class="p">,</span> <span class="s">&quot;.md&quot;</span><span class="p">,</span> <span class="n">file</span><span class="p">))</span>
+  <span class="nf">Rd2markdown</span><span class="p">(</span><span class="n">infile</span><span class="p">,</span> <span class="n">outfile</span><span class="p">,</span> <span class="n">append</span> <span class="o">=</span> <span class="kc">FALSE</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">vignette_file</span> <span class="o">=</span> <span class="nf">dir</span><span class="p">(</span><span class="s">&quot;vignettes/&quot;</span><span class="p">)</span>
+<span class="n">Rmds</span> <span class="o">=</span> <span class="n">vignette_file</span><span class="nf">[grep</span><span class="p">(</span><span class="s">&quot;.Rmd&quot;</span><span class="p">,</span><span class="n">vignette_file</span><span class="p">)</span><span class="n">]</span>
+<span class="n">in_</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="s">&quot;vignettes&quot;</span><span class="p">,</span> <span class="n">Rmds</span><span class="p">)</span>
+<span class="n">out_</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="s">&quot;docs&quot;</span><span class="p">,</span> <span class="nf">gsub</span><span class="p">(</span><span class="s">&quot;.Rmd&quot;</span><span class="p">,</span> <span class="s">&quot;.md&quot;</span><span class="p">,</span> <span class="n">Rmds</span><span class="p">))</span>
+<span class="nf">knit</span><span class="p">(</span><span class="n">in_</span><span class="p">,</span> <span class="n">out_</span><span class="p">)</span>
+
+
+<span class="n">file_rename</span> <span class="o">=</span> <span class="nf">function</span><span class="p">(</span><span class="n">from</span><span class="p">,</span> <span class="n">to</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">todir</span> <span class="o">=</span> <span class="nf">dirname</span><span class="p">(</span><span class="n">to</span><span class="p">)</span>
+    <span class="nf">if </span><span class="p">(</span><span class="o">!</span><span class="nf">isTRUE</span><span class="p">(</span><span class="nf">file.info</span><span class="p">(</span><span class="n">todir</span><span class="p">)</span><span class="o">$</span><span class="n">isdir</span><span class="p">))</span> <span class="nf">dir.create</span><span class="p">(</span><span class="n">todir</span><span class="p">,</span> <span class="n">recursive</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">)</span>
+    <span class="nf">file.rename</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="n">from</span><span class="p">,</span>  <span class="n">to</span> <span class="o">=</span> <span class="n">to</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="n">figures</span> <span class="o">=</span> <span class="nf">dir</span><span class="p">(</span><span class="s">&quot;figure/&quot;</span><span class="p">)</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">f</span> <span class="n">in</span> <span class="n">figures</span><span class="p">){</span>
+  <span class="nf">file_rename</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="s">&quot;figure&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">),</span>
+              <span class="n">to</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="s">&quot;docs&quot;</span><span class="p">,</span> <span class="s">&quot;figure&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">))</span>
+<span class="p">}</span>
+
+<span class="nf">file_rename</span><span class="p">(</span><span class="n">from</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="s">&quot;README.md&quot;</span><span class="p">),</span>
+            <span class="n">to</span> <span class="o">=</span> <span class="nf">file.path</span><span class="p">(</span><span class="s">&quot;docs&quot;</span><span class="p">,</span> <span class="s">&quot;index.md&quot;</span><span class="p">))</span>
+</pre></div>
+
+
+<p>This script will convert all <code>.Rd</code> and <code>.Rmd</code> files from <code>man/</code> and <code>vignettes/</code> and place them in a new folder called <code>docs/</code>. The vignettes will run on Travis, and the figures will also be placed in the <code>docs/</code> folder. MkDocs
+will use the markdown files from that folder to create the final documentation site.</p>
+<h2 id="deployment">Deployment</h2>
+<p>Documentation is deployed continuously with <a href="https://travis-ci.org/">Travis CI</a>, so you don't need to install MkDocs,
+although you will have to install it locally if you want to preview your documentation before
+it's deployed.<br />
+To set up continuous deployment to the project's <code>gh-pages</code> branch, you first need to obtain a GitHub token from GitHub:
+<img alt="Github token" src="../assets/img/github_token.png" /></p>
+<p>Then, on your project's Travis settings, set the environment variable <code>GITHUB_TOKEN</code> and <span style="color: red; font-weight: bold;">DO NOT</span> check the box to display value during build.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>If you're using the R set up, use the key <code>GITHUB_PAT</code> instead of <code>GITHUB_TOKEN</code>.</p>
+</div>
+<p><img alt="Travis settings" src="../assets/img/travis_setting.png" /></p>
+<p>Edit your <code>.travis.yml</code> file to use matrix, so we can separate the test and build stages. The test stage is what you would normally run. Tests set up can vary, see <a href="https://docs.travis-ci.com">Travis CI docs</a> for more information. For the deploy stage, use the set up outlined below. Here we use MkDocs to build the documentation and deploy to GitHub Pages. Note that all the CBC docs should have the CBC logo and a custom style for code blocks. The first six lines in the script section uses the GitHub API to retrieve the css and svg so MkDocs can render the documentation site correctly.</p>
+<div class="codehilite"><pre><span></span><span class="nt">matrix</span><span class="p">:</span> <span class="c1">#allows to set up tests/deploys in different languages/environments.</span>
+  <span class="nt">include</span><span class="p">:</span> <span class="c1">#includes all stages of build</span>
+    <span class="p p-Indicator">-</span> <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">deploy</span> <span class="c1"># this block builds and deploys the docs, it&#39;s in Python.</span>
+      <span class="nt">language</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
+      <span class="nt">sudo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">required</span>
+      <span class="nt">dist</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">trusty</span>
+      <span class="nt">install</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sudo apt-get install jq</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pip install mkdocs==1</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pip install mkdocs-material==3.0.3</span>
+      <span class="nt">script</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkdir docs/styles</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkdir docs/images</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">curl https://api.github.com/repos/compbiocore/cbc-documentation-templates/contents/files/dark_mode.css\?access_token\=$GITHUB_TOKEN &gt; dark_mode.json</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">jq -r &#39;.content&#39; &lt; dark_mode.json | base64 --decode &gt; docs/styles/dark_mode.css</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">curl https://api.github.com/repos/compbiocore/cbc-documentation-templates/contents/files/cbc-logo.svg\?access_token\=$GITHUB_TOKEN &gt; logo.json</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">jq -r &#39;.content&#39; &lt; logo.json | base64 --decode &gt; docs/images/cbc-logo.svg</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkdocs build --verbose --clean --strict</span>
+      <span class="nt">deploy</span><span class="p">:</span>
+        <span class="nt">provider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pages</span>
+        <span class="nt">skip_cleanup</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+        <span class="nt">github_token</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$GITHUB_TOKEN</span>
+        <span class="nt">local_dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">site</span>
+        <span class="nt">on</span><span class="p">:</span>
+          <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+</pre></div>
+
+
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><p style="color:red;"><strong>If you are using the R set up described above, use the following travis set up for the deploy stage:</strong></p></p>
+</div>
+<div class="codehilite"><pre><span></span><span class="nt">matrix</span><span class="p">:</span>
+  <span class="nt">include</span><span class="p">:</span> <span class="c1">#allows to set up tests/deploys in different languages/environments.</span>
+    <span class="p p-Indicator">-</span> <span class="nt">stage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">deploy</span> <span class="c1"># this block builds and deploys the docs, it&#39;s in Python.</span>
+      <span class="nt">language</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">python</span>
+      <span class="nt">sudo</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">required</span>
+      <span class="nt">dist</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">trusty</span>
+      <span class="nt">install</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">sudo apt-get install jq</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">bash miniconda.sh -b -p $HOME/miniconda</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">export PATH=&quot;$HOME/miniconda/bin:$PATH&quot;</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">hash -r</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda config --set always_yes yes --set changeps1 no</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda update -q conda</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda info -a</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda create -q -n test-env python=$TRAVIS_PYTHON_VERSION</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">source activate test-env</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">pip install mkdocs==1 mkdocs-material==3.0.3</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">conda install r-knitr r-devtools</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">R -e &#39;remove.packages(c(&quot;curl&quot;,&quot;httr&quot;)); install.packages(c(&quot;curl&quot;, &quot;httr&quot;), repos=&quot;http://cran.us.r-project.org&quot;); Sys.setenv(CURL_CA_BUNDLE=&quot;/utils/microsoft-r-open-3.5.0/lib64/R/lib/microsoft-r-cacert.pem&quot;)&#39;</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">R -e &#39;install.packages(&quot;Rd2md&quot;, repos=&quot;http://cran.us.r-project.org&quot;)&#39;</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">R -e &#39;source(&quot;https://bioconductor.org/biocLite.R&quot;); biocLite(&quot;BiocInstaller&quot;); library(devtools); install_github(&quot;compbiocore/qckitfastq&quot;,build_vignettes=FALSE)&#39;</span>
+      <span class="nt">before_script</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">source activate test-env</span>
+      <span class="nt">script</span><span class="p">:</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkdir docs</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Rscript make.R</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkdir docs/styles</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkdir docs/images</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">curl https://api.github.com/repos/compbiocore/cbc-documentation-templates/contents/files/dark_mode.css\?access_token\=$GITHUB_PAT &gt; dark_mode.json</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">jq -r &#39;.content&#39; &lt; dark_mode.json | base64 --decode &gt; docs/styles/dark_mode.css</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">curl https://api.github.com/repos/compbiocore/cbc-documentation-templates/contents/files/cbc-logo.svg\?access_token\=$GITHUB_PAT &gt; logo.json</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">jq -r &#39;.content&#39; &lt; logo.json | base64 --decode &gt; docs/images/cbc-logo.svg</span>
+        <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">mkdocs build --verbose --clean --strict</span>
+      <span class="nt">deploy</span><span class="p">:</span>
+       <span class="nt">provider</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">pages</span>
+       <span class="nt">skip_cleanup</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+       <span class="nt">github_token</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$GITHUB_PAT</span>
+       <span class="nt">local_dir</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">site</span>
+       <span class="nt">on</span><span class="p">:</span>
+         <span class="nt">branch</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">master</span>
+</pre></div>
+
+
+<p>Travis will show all stages separately:
+<img alt="Travis pass" src="../assets/img/travis_pass.png" /></p>
+<p>Done! <br />
+Your documentation site will be available at <code>https://compbiocore.github.io/project-name/</code>.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../index_site/" title="Continuous Deployment" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Continuous Deployment
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.583bbe55.js"></script>
+      
+      <script>app.initialize({version:"1.0",url:{base:".."}})</script>
+      
+    
+    
+      
+    
+  </body>
+</html>
