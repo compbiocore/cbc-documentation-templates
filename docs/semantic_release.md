@@ -48,6 +48,7 @@ For julia projects, create a `setup.cfg` file:
 ```toml
 [semantic_release]
 version_variable=Project.toml:version
+upload_to_pypi=false
 ```
 
 ### Travis CI
@@ -55,7 +56,7 @@ version_variable=Project.toml:version
 **semantic-release** works best when integrated with a CI service. To set up your package for semantic-release, add an environment variable to Travis' settings with a Github token called `GH_TOKEN`, and add the following block to your `.travis.yml`:
 
 !!! Important
-    For Python packages that are published on pypi.org, add the variables `PYPI_USERNAME` and `PYPI_PASSWORD` to the Travis environment.
+    For Python packages that are published on pypi.org, add the variables `PYPI_USERNAME` and `PYPI_PASSWORD` to the Travis environment. If you do not want to publish to pypi, set `upload_to_pypi=false` in your `setup.cfg` file.
     In addition, the README should be in `.rst` instead of `.md`, or it won't show up correctly on pypi.org.
 
 If using the matrix set up:  
@@ -65,16 +66,20 @@ If using the matrix set up:
 matrix:
   include:
     - stage: semantic release
+      if: branch = master AND type != pull_request
       language: python
       os: linux
       python: 3.6
       install:
         - pip install typing
         - pip install python-semantic-release
+      before_script: skip # optional, skip if you have a global before_script
       script:
         - git config --global user.name "semantic-release (via TravisCI)"
         - git config --global user.email "semantic-release@travis"
         - semantic-release publish
+      after_script: skip # optional, skip if you have a global after_script
+      after_success: skip # optional, skip if you have a global after_success
 ```
 Or, if the package is in Python, add an `after_success`.  
 
